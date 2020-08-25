@@ -3,29 +3,29 @@ kind: Ingress
 metadata:
   name: test
   namespace: test
-  annotations: 
-     ingress.kubernetes.io/ssl-redirect: "false"
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:  
+  - http:
       paths:
+      - path: /department
+        backend:
+          serviceName: department-service
+          servicePort: 80
       - path: /office
         backend:
           serviceName: office-service
           servicePort: 80
-      - path: /
+      - path: /person
         backend:
-          serviceName: project-assessment-site
+          serviceName: person-service
           servicePort: 80
       - path: /role
         backend:
           serviceName: role-service
           servicePort: 80
-      - path: /department
+      - path: /
         backend:
-          serviceName: department-service
-          servicePort: 80
-      - path: /person
-        backend:
-          serviceName: person-service
+          serviceName: project-assessment-site
           servicePort: 80
