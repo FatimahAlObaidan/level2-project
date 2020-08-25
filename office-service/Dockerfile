@@ -1,10 +1,14 @@
-from node as build
-copy index.js /src/
-copy package* /src/
-run cd /src && \
-    npm install
-from node
-copy --from=build /src/node_modules /dist/node_modules/
-copy index.js /dist/
-workdir /dist
-cmd ["node", "index.js"]
+FROM node:lts-alpine3.10
+
+RUN apk add docker make bash git  
+
+WORKDIR /project-assessment-site 
+COPY package.json /project-assessment-site
+RUN npm install 
+COPY . /project-assessment-site
+
+ENTRYPOINT ["node"]
+
+CMD ["index.js"]
+
+EXPOSE 80
