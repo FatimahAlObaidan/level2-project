@@ -70,7 +70,6 @@ spec:
                       kubectl --token=$TOKEN describe ingress -n test
                       curl localhost | jq
                       curl http://157.175.41.36:32672
-                       curl http://157.175.41.36
                   '''
               }
           }
