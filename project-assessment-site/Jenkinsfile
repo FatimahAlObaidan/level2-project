@@ -66,7 +66,7 @@ spec:
                       kubectl --token=$TOKEN -n test get all
                       kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml -f ingress.yaml
                       kubectl --token=$TOKEN -n test get all
-                      kubectl describe ingress -n test
+                      kubectl --token=$TOKEN describe service -n test
                       curl localhost | jq
                   '''
               }
