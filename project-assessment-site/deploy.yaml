@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: project-assessment-site
-        image: fatimahobaidan/project-assessment-site
+        image: fatimahobaidan/project-assessment-site:v1
         ports:
         - containerPort: 80
