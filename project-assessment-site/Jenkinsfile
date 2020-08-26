@@ -66,6 +66,7 @@ spec:
                       kubectl --token=$TOKEN -n test get all
                       kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml -f ingress.yaml
                       kubectl --token=$TOKEN -n test get all
+                      kubectl create -n jenkins clusterrolebinding jenkins-account --clusterrole=cluster-admin --serviceaccount=jenkins:jenkins
                       kubectl describe service -n test
                       kubectl describe ingress -n test
                       curl localhost | jq
