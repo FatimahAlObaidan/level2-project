@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('omega_docker_creds')
     DOCKER_NAMESPACE = 'omegaproject1'
     SERVICE_NAME = 'role-service'
-    TOKEN=credentials('ad4a793f-f7df-44db-a7b6-45e5ab23560b')
+    TOKEN=credentials('2407e45d-3c81-4f7a-8817-36e3bae44ff2')
   }
   stages {
       stage("Build") {
