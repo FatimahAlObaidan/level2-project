@@ -32,10 +32,10 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('fatima_docker_creds')
-    DOCKER_NAMESPACE = 'fatimahobaidan'
+    CREDS = credentials('omega_docker_creds')
+    DOCKER_NAMESPACE = 'omegaproject1'
     SERVICE_NAME = 'office-service'
-    TOKEN=credentials('bcbcf21a-f154-4099-9d8f-0aa5e8697b5e')
+    TOKEN=credentials('ad4a793f-f7df-44db-a7b6-45e5ab23560b')
   }
   stages {
       stage("Build") {
