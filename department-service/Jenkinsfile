@@ -38,6 +38,7 @@ spec:
     TOKEN=credentials('f79b40ee-2e62-47d2-8cad-e5e350d38804')
   }
   stages {
+  when { changeset "**/$SERVICE_NAME/**" }
       stage("Build") {
           steps {
               container('dnd') {
@@ -66,7 +67,7 @@ spec:
                       kubectl --token=$TOKEN -n test get all
                       kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
                       kubectl --token=$TOKEN -n test get all
-		      kubectl --token=$TOKEN -n test get pods
+		              kubectl --token=$TOKEN -n test get pods
                   '''
               }
           }

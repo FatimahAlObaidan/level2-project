@@ -39,6 +39,7 @@ spec:
   }
   stages {
       stage("Build") {
+        when { changeset "**/$SERVICE_NAME/**" }
           steps {
               container('dnd') {
                   sh '''
