@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('omega_docker_creds')
     DOCKER_NAMESPACE = 'omegaproject1'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('a1128c0f-36a9-4149-a8d3-b483c340a8b6')
+    TOKEN=credentials('f79b40ee-2e62-47d2-8cad-e5e350d38804')
   }
   stages {
       stage("Build") {
@@ -66,6 +66,7 @@ spec:
                       kubectl --token=$TOKEN -n test get all
                       kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
                       kubectl --token=$TOKEN -n test get all
+		      kubectl --token=$TOKEN -n test get pods
                   '''
               }
           }
