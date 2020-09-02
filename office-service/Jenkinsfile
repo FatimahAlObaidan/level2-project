@@ -38,13 +38,8 @@ spec:
     TOKEN=credentials('f79b40ee-2e62-47d2-8cad-e5e350d38804')
   }
   stages {
-   stage ('changes'){
-        when {
-                 changeset "**/$SERVICE_NAME/*.*"       }
-              }
-       stages{
-
       stage("Build") {
+       when { changeset "**/$SERVICE_NAME/**" }
           steps {
               container('dnd') {
                   sh '''
